@@ -1,0 +1,16 @@
+#!/bin/sh
+## USB ID
+USB="/dev/disk/by-id/usb-USB_DISK_USB_DISK_C5881100FFFF0001-0:0";
+## dd options
+BS_DD="512" SKIP_DD="33" COUNT_DD="2500" if [ -b "$USB" ];then
+    /bin/dd if="$USB" bs="$BS_DD" skip="$SKIP_DD" count="$COUNT_DD" 2>/dev/null else
+    if [ -x /bin/plymouth ] && plymouth --ping;then
+    plymouth ask-for-password --prompt="Enter Passphrase"
+    else
+        echo -n "Enter Passphrase"
+        stty -echo
+        read passphrase 2>/dev/null
+        echo -n "$passphrase"
+        stty echo;
+    fi
+fi
