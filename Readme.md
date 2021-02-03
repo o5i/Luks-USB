@@ -1,11 +1,8 @@
 You probably have discovered that it is possible to unlock your LUKS encrypted by USB. Another thing i 
 figured out is that you maybee dont want to put your key in a file what everyone can copy easy. So i tought that it is maybee a good thing 
 to put the key in a random space on the usb whitout partition.. So nobody knows where the key is even if he can copy the usb key.. The 
-other good thing is that every usb device has a unique hardware id, so if somone is able to copy the key, he needs to have a key whit the 
-same hardware id in order to make it funtional.. 
-
-- invisible key 
-- Physical hardware ID stored
+other good thing is that every usb device has a unique hardware id, so if somone is able to copy the key, he needs to have a key with the 
+same hardware id in order to make it work
 
 In order to make it work, first you need to tell your kernel to enable the usb support at boot time by compiling it or by puting the modules in the ramdisk. In case of an Ubuntu it is
 
